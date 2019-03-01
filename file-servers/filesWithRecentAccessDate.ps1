@@ -1,0 +1,1 @@
+Get-ChildItem -Recurse | Where-Object { $_.LastWriteTime -ge "10/01/2017" -OR $_.LastAccessTime -ge "10/01/2017" -OR $_.CreationTime -ge "10/01/2017"} | select FullName,CreationTime,LastAccessTime,LastWriteTime | Export-CSV -Path e:\Report_SysAdmin_and_Dev_01-Oct-2018.csv -NoType
