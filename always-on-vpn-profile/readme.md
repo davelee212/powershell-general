@@ -1,1 +1,5 @@
-Microsoft provided the original version of this script.  They don't provide a "raw" version of it though.  The versions you can get are only published on their website and some small (but really important!) changes happen to the script in the browser because it has some characters in it that are interpreted by the browser as HTML.
+Microsoft provided the original version of this script at https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections
+
+I found the way they provide the script (one "full" copy of it and a section with it split up) a little bit confusing.  HAving copy/pasted it from the docs webpage into Powershell ISE, some of the script gets screwed up and some essentially formatting seems to be interpreted as HTML so the script doesn't run.  Specifically it's the bits that do some substitution of <, > and = in in the file
+
+This has been tested and works :)
