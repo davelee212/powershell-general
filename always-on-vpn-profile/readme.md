@@ -1,0 +1,1 @@
+Microsoft provided the original version of this script.  They don't provide a "raw" version of it though.  The versions you can get are only published on their website and some small (but really important!) changes happen to the script in the browser because it has some characters in it that are interpreted by the browser as HTML.
