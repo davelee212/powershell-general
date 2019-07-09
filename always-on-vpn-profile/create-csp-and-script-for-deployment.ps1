@@ -67,8 +67,9 @@ $ProfileXML =
 $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
 
 # This $Script string is where the contents of the PowerShell script are put together before it's written out to a file"
-$Script = '# This script will only work if the user has admin rights.  It will also not run inside an RDP session because it will not be able to query the user SID.  This situation is only likely to come up in testing so is unlikely to be a problem in practice.
-$ProfileName = ''' + $ProfileName + '''
+# This script will only work if the user has admin rights.  It will also not run inside an RDP session because it will not 
+# be able to query the user SID.  This situation is only likely to come up in testing so is unlikely to be a problem in practice.
+$Script = '$ProfileName = ''' + $ProfileName + '''
 $ProfileNameEscaped = $ProfileName -replace '' '', ''%20''
 $ProfileXML = ''' + $ProfileXML + '''
 $ProfileXML = $ProfileXML -replace ''<'', ''&lt;''
