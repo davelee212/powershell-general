@@ -7,7 +7,7 @@
 #   - Windows 10 Pro 1803
 
 # The name of the configured VPN profile on the machine this is being run on
-$TemplateName = 'Template VPN'
+$TemplateName = 'Template VPN Profile'
 
 # The name of the VPN Profile that will be created when the script is run on target computers
 $ProfileName = 'Always On VPN'
@@ -82,7 +82,7 @@ $className = ''MDM_VPNv2_01''
 try
 {
     # If running this in an RDP session for testing, commend out the 4 lines below this and add in a line to manually set the
-    # $SidValue to the SID of the user you're logged in and testing with.  You can get the SID of the current user by using 
+    # $SidValue to the SID of the user you are logged in and testing with.  You can get the SID of the current user by using 
     # the command "whoami /user" from a command prompt.
     $username = Gwmi -Class Win32_ComputerSystem | select username
     $objuser = New-Object System.Security.Principal.NTAccount($username.username)
