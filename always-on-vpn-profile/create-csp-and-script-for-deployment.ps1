@@ -10,23 +10,37 @@
 $TemplateName = 'Template VPN Profile'
 
 # The name of the VPN Profile that will be created when the script is run on target computers
+# Unique alphanumeric identifier for the profile. The profile name must not include a forward slash (/). 
+# If the profile name has a space or other non-alphanumeric character, it must be properly escaped according 
+# to the URL encoding standard.
 $ProfileName = 'Always On VPN'
 
-# The RRAS Server public DNS name
+# Public or routable IP address or DNS name for the VPN gateway. It can point to the external IP of a 
+# gateway or a virtual IP for a server farm. Examples, 208.147.66.130 or vpn.contoso.com.
 $Servers = 'remote.mydomain.co.uk'
 
-# The DNS Suffix used for resolution of internal servers
+# Specifies one or more commas separated DNS suffixes. The first in the list is also used as the primary
+# connection-specific DNS suffix for the VPN Interface. The entire list will also be added into the SuffixSearchList.
 $DnsSuffix = 'corp.mydomain.co.uk'
 
-# The domain name, for something??
+# Used to indicate the namespace to which the policy applies. When a Name query is issued, the DNS client compares the name 
+# in the query to all of the namespaces under DomainNameInformationList to find a match. This parameter can be one of the following types:
+#  - FQDN - Fully qualified domain name
+#  - Suffix - A domain suffix that will be appended to the shortname query for DNS resolution. To specify a suffix, prepend a period (.) to 
+#    the DNS suffix.
 $DomainName = '.corp.mydomain.co.uk'
 
-# The DNS Server addresses used when connected
+# List of comma-separated DNS Server IP addresses to use for the namespace.
 $DNSServers = '192.168.100.10,192.168.100.11'
 
 # This is for the "Trusted Network Detection".  If connected to a network with this DNS Suffix (i.e. supplied to the computer
 # via DHCP) then the VPN connection will not connect as it is deemed to be connected to the internal network.  If on a network
-# with a different DNS Suffix, it is deemed to be an external network, so the VPN connection will trigger and connect
+# with a different DNS Suffix, it is deemed to be an external network, so the VPN connection will trigger and connect.  I think
+# can put multiple comma-delimited values in here if you have trusted networks with different DNS suffixes.
+
+# Comma-separated string to identify the trusted network. VPN does not connect automatically when the user is on their corporate 
+# wireless network where protected resources are directly accessible to the device.
+# DL: I believe this is the DNS suffix supplied by DHCP for that connection.  I thnk you can supply multiple comma-separated names
 $TrustedNetwork = 'corp.mydomain.co.uk'
 
 
